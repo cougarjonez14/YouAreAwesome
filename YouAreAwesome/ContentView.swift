@@ -8,47 +8,71 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var messageString = ""
+    @State private var messageString = "Sending you some good vibes!"
     
     var body: some View {
         
         
-        VStack {
-            Text(messageString)
-                .background(.orange)
-                .font(.largeTitle)
-                .fontWeight(.heavy)
-                .foregroundColor(.indigo)
-            
-            Image(systemName: "swift")
-                .resizable()
-                .scaledToFit()
-                .minimumScaleFactor(0.5)
-                .foregroundColor(.orange)
-                .padding(30)
-                .background(.blue)
-                .padding(7)
-                .border(.orange, width: 5)
-                .frame(width: 200, height: 275)
-
-            HStack {
-                Button("Awesome") {
-                   messageString = "You Are Awesome!"
-                }
-                .buttonStyle(.borderedProminent)
-                
-                Button("Great") {
-                   messageString = "You Are Great!"
-                }
-                .buttonStyle(.bordered)
-                
-                Button("Fabulous") {
-                    messageString = "You are Fabulous"
-                }
-                .buttonStyle(.borderedProminent)
+        VStack (spacing: 25) {
+            Button(action: {
+                messageString = "Ommmm 🕉️"
+            }) {
+                Image(systemName: "peacesign")
+                    .font(.system(size: 100))
+                    .foregroundColor(.cyan)
             }
             
-           
+            Text(messageString)
+                .font(.largeTitle)
+                .fontWeight(.heavy)
+                .minimumScaleFactor(0.5)
+                .multilineTextAlignment(.center)
+                .padding()
+                .frame(width: 300, height:  120)
+                .border(.blue, width: 7)
+                .cornerRadius(10)
+
+            
+            HStack {
+                Spacer()
+                Button("Safe") {
+                    messageString = "You are Safe!"
+                }
+                .buttonStyle(.borderedProminent)
+                .fontWeight(.heavy)
+                .kerning(2.5)
+                
+                Spacer()
+                Button("Loved") {
+                    messageString = "You are Loved!"
+                }
+                .buttonStyle(.bordered)
+                .fontWeight(.heavy)
+                .kerning(2.5)
+                
+                Spacer()
+                Button("Well") {
+                    messageString = "You are Well!"
+                }
+                .buttonStyle(.borderedProminent)
+                .fontWeight(.heavy)
+                .kerning(2.5)
+                
+                Spacer()
+
+                
+            }
+            
+            // add om sign
+            Button(action: {
+                messageString = "Ommmm 🕉️"
+            }) {
+                Image(systemName: "peacesign")
+                    .font(.system(size: 100))
+                    .foregroundColor(.cyan)
+            }
+            
+            
             
             
         }
